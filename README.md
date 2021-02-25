@@ -1,5 +1,9 @@
 # frontend-app
-
+App per gestire i vari processi del laboratorio.
+## Struttura progetto
+App globale è composta da diversi moduli (piccole app).
+Ogni modulo è sviluppato singolarmente.
+Nella cartella src/apps ogni cartella rappresenta un modulo
 ## Project setup
 ```
 npm install
