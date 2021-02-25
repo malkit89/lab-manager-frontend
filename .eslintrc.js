@@ -3,21 +3,26 @@
 module.exports = {
   root: true,
   parser: 'vue-eslint-parser',
+
   parserOptions: {
     "parser": "babel-eslint",
     sourceType: 'module',
     "ecmaVersion": 2020
   },
+
   env: {
     node: true
   },
+
   // https://github.com/feross/standard/blob/master/RULES.md#javascript-standard-style
   //extends: ['plugin:vue/essential', 'plugin:vue/vue3-recommended', '@vue/prettier'],
   extends: ['plugin:vue/essential', 'prettier','prettier/vue'],
+
   // required to lint *.vue files
   plugins: [
     'vue'
   ],
+
   // add your custom rules here
   'rules': {
     // allow paren-less arrow functions
@@ -30,5 +35,17 @@ module.exports = {
     'no-unused-vars': 0,
     'no-undef': 0,
     'quotes':[1,'single']
-  }
+  },
+
+  overrides: [
+    {
+      files: [
+        '**/__tests__/*.{j,t}s?(x)',
+        '**/tests/unit/**/*.spec.{j,t}s?(x)'
+      ],
+      env: {
+        jest: true
+      }
+    }
+  ]
 }
